@@ -1,0 +1,115 @@
+body {
+  background-image: url("http://www.ajou.ac.kr/_resources/che/img/main_visual01.jpg");
+  background-color: black;
+}
+
+header > h1 {
+  color: blue;
+  text-align: center;
+  margin-bottom: 100px;
+}
+
+body {
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+.content {
+  position: relative;
+  height: 60vh;
+  margin: 4vh;
+  text-shadow: none;
+}
+
+.content-row {
+  clear: both;
+  height: 10%;
+}
+
+.cell {
+  float: left;
+  position: relative;
+  width: 5.55%;
+  height: 100%;
+}
+
+.detail {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 1px;
+  right: 1px;
+  box-sizing: border-box;
+  box-shadow: 0px 0px 4px gray;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  text-align: center;
+  font-weight: bold;
+  background-color: rgba(76, 94, 172, 0.95);
+}
+
+.at_num,
+.at_details {
+  position: absolute;
+  font-size: 0w.4v;
+}
+
+.at_details {
+  top: 4px;
+  text-align: right;
+  color: black;
+  font-size: 0.5vh;
+}
+
+.at_num {
+  bottom: 4px;
+}
+
+.name {
+  position: absolute;
+  top: 50%;
+  left: 0px;
+  right: 0px;
+  font-weight: bold;
+  margin-top: -4px;
+  font-size: 2vh;
+  line-height: 1;
+  height: 9px;
+  color: gray;
+}
+
+.at_details {
+  bottom: 4px;
+  left: 0px;
+  right: 0px;
+}
+
+.cell:nth-child(-n + 2) .detail,
+.cell:nth-child(n + 13) .detail {
+  background-color: pink;
+}
+
+.cell:nth-child(1) .detail,
+.content-row:nth-child(2) .cell:nth-child(n + 14) .detail,
+.content-row:nth-child(3) .cell:nth-child(n + 15) .detail,
+.content-row:nth-child(4) .cell:nth-child(n + 16) .detail,
+.content-row:nth-child(5) .cell:nth-child(n + 17) .detail {
+  background-color: olivedrab;
+}
+
+.content-row:nth-child(-n + 6) .cell:nth-child(18) .detail {
+  background-color: yellow;
+}
+
+.content-row:nth-child(n + 9) .detail {
+  background-color: orange;
+}
+
+footer {
+  margin-top: 10vh;
+  width: 100%;
+}
+
+footer > i {
+  float: right;
+  margin: 10px 30px 10px 30px;
+  font-family: monospace;
+}
