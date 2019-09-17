@@ -1,1 +1,1 @@
-CREATE database ft_sapark;
+CREATE database db_sapark;
