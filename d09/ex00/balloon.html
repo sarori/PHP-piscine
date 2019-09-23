@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <!-- <script type="text/javascript" src="jquery.js"></script> -->
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.js"
+      integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+      crossorigin="anonymous"
+    ></script>
+    <title>Ballon</title>
+    <style>
+      #ballon {
+        width: 200px;
+        height: 200px;
+        background-color: red;
+        border-radius: 50%;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- document.getElementById('id').onclick = function() {
+			// do magic
+		}; -->
+
+    <!-- <div id="ballon" onclick="test1()" onmouseout="test2()"></div> -->
+    <div id="ballon"></div>
+    <script>
+      var colors = ["red", "green", "blue"];
+      var i = 0;
+      let size_width = 200;
+      let size_height = 200;
+      var Ballon = document.getElementById("ballon");
+
+      Ballon.addEventListener("click", function() {
+        Ballon.style.backgroundColor = colors[i % 3];
+        i++;
+        if (size_height < 420 && size_width < 420) {
+          size_width += 10;
+          size_height += 10;
+        } else {
+          size_width = 200;
+          size_height = 200;
+        }
+        Ballon.style.width = `${size_width}px`;
+        Ballon.style.height = `${size_height}px`;
+      });
+
+      Ballon.addEventListener("mouseleave", function() {
+        // console.log(Ballon.style);
+        Ballon.style.backgroundColor = colors[2 - (i % 3)];
+        i++;
+        if (size_height > 200 && size_width > 200) {
+          size_height -= 5;
+          size_width -= 5;
+        }
+        Ballon.style.width = `${size_width}px`;
+        Ballon.style.height = `${size_height}px`;
+      });
+
+      //   function test1() {
+      //     // $("#ballon").animate(
+      //     //   {
+      //     //     width: $("#ballon").width() + 20,
+      //     //     height: $("#ballon").height() + 20
+      //     //   },
+      //     //   300
+      //     // );
+      //     $("#ballon").css("backgroundColor", colors[i % 3]);
+      //     i++;
+      //     if ($("#ballon").width < 420 && $("#ballon").height < 420) {
+      //       $("#ballon").css("width", $("#ballon").width() + 10);
+      //       $("#ballon").css("height", $("#ballon").height() + 10);
+      //     } else {
+      //       $("#ballon").css("width", "200");
+      //       $("#ballon").css("height", "200");
+      //     }
+      //   }
+
+      //   function test2() {
+      //     $("#ballon").css("backgroundColor", colors[2 - (i % 3)]);
+      //     i++;
+      //     if ($("#ballon").width > 200 && $("#ballon").height > 200) {
+      //       $("#ballon").css("width", $("#ballon").width() - 5);
+      //       $("#ballon").css("height", $("#ballon").height() - 5);
+      //     }
+
+      //     // Ballon.style.backgroundColor = colors[2 - (i % 3)];
+      //     // i++;
+      //     // if (Ballon.width > 200 && Ballon.height > 200) {
+      //     //   Ballon.height = Ballon.clientHeight - 5;
+      //     //   Ballon.height = Ballon.clientWidth - 5;
+      //     // }
+      //   }
+
+      //   function change() {
+      //     document.getElementById("ballon").style.backgroundColor = colors[i % 3];
+      //     if (
+      //       document.getElementById("ballon").width <= 420 &&
+      //       document.getElementById("ballon").height <= 420
+      //     )
+      //       document.getElementById("ballon").width += 10; //ㅅㅏ이즈 안바뀌는 이유
+      //     document.getElementById("ballon").height += 10;
+      //     i++;
+      //   }
+    </script>
+  </body>
+</html>
+
+<!-- $("#ballon").css("뭘 바꿀지", "뭘로 바꿀지"); -->

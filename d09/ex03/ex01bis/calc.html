@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.js"
+      integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+      crossorigin="anonymous"
+    ></script>
+    <title>Calc</title>
+    <style>
+     
+    </style>
+  </head>
+  <body>
+    <div>
+      <input type="text" id = "num1"/>
+      <select id="operator">
+        <option >+</option>
+        <option >-</option>
+        <option >*</option>
+        <option >/</option>
+        <option >%</option>
+      </select>
+      <input type="text" id = "num2"/>
+      <button onclick="myFunction()">Try me!</button>
+    </button>
+    
+    <script>
+      function myFunction() {
+        const num1 = $("#num1").val();
+        const num2 = $("#num2").val();
+        var res;
+        var oper = $("#operator").val();
+        var res;
+        window.setInterval(function(){ alert("Please, use me..."); }, 30000);
+        if (parseInt(num1) >= 0 && parseInt(num2) >= 0 ){
+          if ((oper == '/' || oper == '%') && parseInt(num2) == 0){
+            alert("It's over 9000!");
+          } else {
+            res = `${eval(`${num1} ${oper} ${num2}`)}`
+            alert("Result is "+ res); 
+          }
+        } else {
+          alert("Error :("); 
+        }
+      }
+	  </script>
+    </div>
+  </body>
+</html>
